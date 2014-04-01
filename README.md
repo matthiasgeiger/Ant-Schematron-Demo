@@ -1,8 +1,9 @@
-1 Ant Schematron Demo
+Ant Schematron Demo
+====================
 
 This small project shows the usage of Ant Schematron two perform a schematron validation on XML files.
 
-1.1 Usage
+## Usage
 A demo Schematron file (src/main/resources/sample-schematron.sch) and a XML file to be validated (src/main/resources/sample-file-to-validate.xml) is shipped with the project.
 
 To test the validation simply run:

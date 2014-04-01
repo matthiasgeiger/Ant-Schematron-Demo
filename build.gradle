@@ -1,0 +1,44 @@
+apply plugin: "java"
+apply plugin: "idea"
+apply plugin: "eclipse"
+apply plugin: "application"
+
+
+mainClassName = "demo.Main"
+
+repositories {
+    mavenCentral()
+}
+
+
+configurations {
+    internal
+    external
+}
+
+dependencies {
+    internal 'net.sf.saxon:Saxon-HE:9.5.1-5'
+
+    external files(fileTree(dir: "lib", includes: ['*.jar']))
+
+    testCompile 'junit:junit:4.11'
+
+    compile configurations.internal
+    compile configurations.external
+}
+
+jar {
+   manifest { attributes 'Main-Class': mainClassName }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
+
+run {
+    if(project.hasProperty('args')){
+        args project.args.split('\\s+')
+    }
+}
+
+

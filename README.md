@@ -1,4 +1,4 @@
-Ant Schematron Demo
+Ant Schematron Demo ![The Schematroll](http://xml.ascc.net/resource/schematron/bilby.jpg)
 ====================
 
 This small project shows the usage of Ant Schematron two perform a schematron validation on XML files.
